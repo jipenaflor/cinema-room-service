@@ -1,5 +1,10 @@
 package com.jipenaflor.cinema_room_service.dto;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+@JsonPropertyOrder({
+        "income", "available", "purchased"
+})
 public class StatsDTO {
 
     private int income;
