@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: cinema-room-service
+
+cinema:
+  seats:
+    rows: 9
+    columns: 9
+    size: 9
+    available: 81
+    price-high: 10
+    price-low: 8
