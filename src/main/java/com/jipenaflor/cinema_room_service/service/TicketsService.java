@@ -1,9 +1,9 @@
 package com.jipenaflor.cinema_room_service.service;
 
+import com.jipenaflor.cinema_room_service.config.CinemaSeats;
 import com.jipenaflor.cinema_room_service.dto.PurchaseRequestDTO;
 import com.jipenaflor.cinema_room_service.dto.PurchaseResponseDTO;
 import com.jipenaflor.cinema_room_service.dto.RefundRequestDTO;
-import com.jipenaflor.cinema_room_service.entity.CinemaSeats;
 import com.jipenaflor.cinema_room_service.entity.Seat;
 import com.jipenaflor.cinema_room_service.exception.InvalidPurchaseException;
 import com.jipenaflor.cinema_room_service.exception.InvalidTokenException;
@@ -21,10 +21,11 @@ public class TicketsService {
     private CinemaSeatsProperty cinemaSeatsProperty;
     private CinemaService cinemaService;
 
-    public TicketsService(CinemaSeatsProperty cinemaSeatsProperty, CinemaService cinemaService) {
+    public TicketsService(CinemaSeatsProperty cinemaSeatsProperty,
+                          CinemaService cinemaService,
+                          CinemaSeats cinemaSeats) {
         this.cinemaSeatsProperty = cinemaSeatsProperty;
-        this.cinemaSeats = new CinemaSeats(cinemaSeatsProperty.getSize(),
-                cinemaSeatsProperty.getPriceHigh(), cinemaSeatsProperty.getPriceLow());
+        this.cinemaSeats = cinemaSeats;
         this.cinemaService = cinemaService;
     }
 

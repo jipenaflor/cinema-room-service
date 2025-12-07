@@ -14,6 +14,9 @@ public class CinemaSeatsProperty {
     private int priceHigh;
     private int priceLow;
 
+    public CinemaSeatsProperty() {
+    }
+
     public int getRows() {
         return rows;
     }

@@ -8,21 +8,17 @@ import com.jipenaflor.cinema_room_service.properties.CinemaSeatsProperty;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
 import java.util.UUID;
 
 @Service
 public class CinemaService {
 
     private Cinema cinema;
-    private CinemaSeatsProperty cinemaSeatsProperty;
 
     public final static String PASSWORD = "super_secret";
 
-    public CinemaService(CinemaSeatsProperty cinemaSeatsProperty) {
-        this.cinemaSeatsProperty = cinemaSeatsProperty;
-        this.cinema = new Cinema(0, cinemaSeatsProperty.getAvailable(),
-                0, new HashMap<>());
+    public CinemaService(Cinema cinema) {
+        this.cinema = cinema;
     }
 
     public ResponseEntity<StatsDTO> getStats(String password) {
